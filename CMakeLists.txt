@@ -32,7 +32,7 @@ endif()
 set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake/Modules)
 find_package(CUDNN)
 
-option(BUILD_CUTLASS_MOE "Builds CUTLASS kernels supporting MoE GEMM" ON)
+option(BUILD_CUTLASS_MOE "Builds CUTLASS kernels supporting MoE GEMM" OFF)
 if(BUILD_CUTLASS_MOE)
   message(STATUS "Add DBUILD_CUTLASS_MOE, requires CUTLASS. Increases compilation time")
   add_definitions("-DBUILD_CUTLASS_MOE")

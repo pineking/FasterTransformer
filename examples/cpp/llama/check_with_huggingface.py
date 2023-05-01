@@ -2,11 +2,11 @@ import transformers
 
 from transformers import LlamaForCausalLM, LlamaTokenizer
 
-tokenizer = LlamaTokenizer.from_pretrained('/data/llama-7b-hf')
+tokenizer = LlamaTokenizer.from_pretrained('/data/unisound/plms/7B_origin/hf')
 
 prompt = "Hey, are you consciours? Can you talk to me?"
 inputs = tokenizer(prompt, return_tensors='pt')
-model = LlamaForCausalLM.from_pretrained("/data/llama-7b-hf")
+model = LlamaForCausalLM.from_pretrained("/data/unisound/plms/7B_origin/hf")
 hf_config = vars(model.config)
 print(hf_config)
 generated_ids = model.forward(inputs.input_ids, output_hidden_states=True)
